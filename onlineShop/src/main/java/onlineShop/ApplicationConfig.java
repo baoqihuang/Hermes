@@ -1,5 +1,4 @@
 package onlineShop;
-
 import java.util.Properties;
 
 import javax.sql.DataSource;

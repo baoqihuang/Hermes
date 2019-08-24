@@ -10,7 +10,10 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "billingAddress")
-public class BillingAddress implements Serializable{
+public class BillingAddress implements Serializable {
+
+	private static final long serialVersionUID = 1028098616457762743L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -78,5 +81,4 @@ public class BillingAddress implements Serializable{
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	
 }

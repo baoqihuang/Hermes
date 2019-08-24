@@ -13,19 +13,22 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-@Table(name = "caritem")
-public class CartItem implements Serializable{
+@Table(name = "cartitem")
+public class CartItem implements Serializable {
+	
 	private static final long serialVersionUID = -2455760938054036364L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	
+
+	private int quantity;
+
 	private double price;
-	
+
 	@OneToOne
 	private Product product;
-	
+
 	@ManyToOne
 	@JsonIgnore
 	private Cart cart;
@@ -36,6 +39,14 @@ public class CartItem implements Serializable{
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
 	}
 
 	public double getPrice() {
@@ -61,15 +72,4 @@ public class CartItem implements Serializable{
 	public void setCart(Cart cart) {
 		this.cart = cart;
 	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-	
-	
-	
-	
-	
-	
-	
 }
